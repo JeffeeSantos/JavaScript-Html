@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+
+  <script>
+    function criaElemento(tag, texto) {
+      var elemento = document.createElement(tag);
+      var textoElemento = document.createTextNode(texto);
+      elemento.appendChild(textoElemento);
+      return elemento;
+    }
+
+    function mostraResultado(frase) {
+      var resultado = document.getElementById("resultado");
+      if (resultado === null) {
+        resultado = criaElemento("div", "");
+        resultado.setAttribute("id", "resultado");
+        document.body.appendChild(resultado);
+      }
+      var paragrafo = criaElemento("p", frase);
+      resultado.appendChild(paragrafo);
+    }
+
+    function calculaImc(altura, peso) {
+      var alturaMetros = altura / 100; // Converte a altura para metros
+      var imc = peso / (alturaMetros * alturaMetros);
+      return imc.toFixed(2); // Arredonda o resultado para duas casas decimais
+    }
+
+    var nome = prompt("Informe seu nome");
+    var alturaInformado = parseFloat(prompt(nome + ", informe sua altura em centímetros"));
+    var pesoInformado = parseFloat(prompt(nome + ", informe seu peso em quilogramas"));
+
+    var imc = calculaImc(alturaInformado, pesoInformado);
+    mostraResultado(nome + ", o seu IMC é " + imc);
+
+    if (imc > 35) {
+      mostraResultado(nome + ", você está acima do normal.");
+    } else if (imc < 18.5) {
+      mostraResultado(nome + ", você está abaixo do normal.");
+    } else {
+      mostraResultado(nome + ", seu IMC está excelente.");
+    }
+  </script>

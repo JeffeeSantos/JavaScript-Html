@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<script>
+	function pulaLinha() {
+		document.write("<br>");
+	}
+	function mostra(frase) {
+		document.write(frase);
+		pulaLinha();
+	}
+	var anoChegada = 1500;
+	var anoAtual = 2023;
+	var idadeMediaQuandoTemFilhos = 28;
+
+	mostra("Passaram até o momento " + Math.round((anoAtual - anoChegada)/idadeMediaQuandoTemFilhos) + " gerações.");
+</script>

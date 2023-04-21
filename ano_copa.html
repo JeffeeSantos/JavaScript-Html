@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var limite = parseInt(prompt("Até qual ano você deseja?"));
+    var copaInicio = 1930;
+
+    while(copaInicio <= limite) {
+        mostra("Teve copa em " + copaInicio);
+    copaInicio = copaInicio + 4;
+
+    }
+
+    mostra("FIM");
+    
+
+</script>

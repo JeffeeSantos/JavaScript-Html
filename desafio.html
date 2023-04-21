@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var limite = parseInt(prompt("Número até quanto?"));
+    var numeroAleatorio = Math.round(Math.random() * limite);
+    var tentativas = 1;
+
+    while(tentativas <= 3) {
+
+        var chute = parseInt(prompt("Adivinhe o numero"));
+        
+        if(chute == numeroAleatorio) {
+            mostra("Você acertou! O número era " + numeroAleatorio);
+            tentativas = 4
+            // ou break
+        } else {
+            mostra("Você errou!");
+        }
+        tentativas++
+    }
+    mostra("Fim")
+</script>
